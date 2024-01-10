@@ -31,6 +31,14 @@ pipeline{
                 }
             }
         }
+	stage(){
+        withCredentials([string(credentialsId: 'pwddoc', variable: 'dockerhub')]) {
+	docker login -u prahlad2083 -p ${dockerhub}	
+        docker push prahlad2083/chekk:$BUILD_NUMBER
+	
+	}
+
+	}	
         stage('indentifying misconfigs using datree in helm charts'){
             steps{
                 script{
