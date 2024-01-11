@@ -24,7 +24,7 @@ pipeline{
             steps{
                 script{
 	 sh '''
-                docker build -t prahlad2083/chekk:$BUILD_NUMBER .
+                {params.name}:$BUILD_NUMBER .
             '''
                     
                 }
