@@ -20,12 +20,9 @@ pipeline{
         stage("docker build"){
             steps{
                 script{
-                    
-                             sh '''
-                                docker build -t prahlad2083/chekk:$BUILD_NUMBER .
-                        
-                                
-                            '''
+	 sh '''
+                docker build -t prahlad2083/chekk:$BUILD_NUMBER .
+            '''
                     
                 }
             }
