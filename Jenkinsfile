@@ -4,6 +4,9 @@ pipeline{
         VERSION = "${env.BUILD_ID}"
 	DOCKERHUB_CREDENTIALS = credentials('dockerhub')    
     }
+    parameters {
+  string description: 'Please Enter Docker Build Command ', name: 'Docker Command'
+}
     stages{
         stage("sonar quality check"){
          
